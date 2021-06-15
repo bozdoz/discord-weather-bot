@@ -15,6 +15,25 @@ const helpText = [
   // `Maybe try asking politely? \`!${command} pei next week please\``,
 ]
 
+const failTexts = [
+  {
+    text: 'dunno what dat is',
+    react: '🤷‍♀️',
+  },
+  {
+    text: `that didn't work; maybe try again`,
+  },
+  {
+    text: `I have no idea. Rain maybe?`,
+    react: '🌦',
+  },
+]
+
+/**
+ * @template T
+ * @param {Array<T>} arr
+ * @returns T
+ */
 const random = (arr) => arr[Math.floor(Math.random() * arr.length)]
 
 client.on('message', async (msg) => {
@@ -41,7 +60,12 @@ client.on('message', async (msg) => {
     } catch (e) {
       console.error(e)
       msg.react('😭')
-      msg.channel.send('Failed to parse the location')
+      const failMessage = random(failTexts)
+      const sent = await msg.reply(failMessage.text)
+
+      if (failMessage.react) {
+        sent.react(failMessage.react)
+      }
     }
     return
   }
