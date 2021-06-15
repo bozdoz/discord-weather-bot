@@ -6,7 +6,7 @@ COPY package.json yarn.lock ./
 
 RUN yarn --no-progress --frozen-lockfile
 
-COPY . .
+COPY src src
 
 RUN chown -R node:node /app
 
