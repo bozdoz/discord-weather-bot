@@ -1,0 +1,14 @@
+node_modules
+.env*
+README.md
+.git*
+
+# ignore yourself
+.docker*
+docker*
+Docker*
+
+.eslint*
+.vscode
+.prettierrc
+types.d.ts
