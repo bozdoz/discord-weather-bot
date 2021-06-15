@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock ./
 
-RUN yarn --no-progress --frozen-lockfile
+RUN yarn --no-progress --frozen-lockfile --production
 
 COPY src src
 

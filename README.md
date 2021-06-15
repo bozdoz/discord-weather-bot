@@ -1,4 +1,4 @@
-# discord-bot-weather
+# Discord Weather Bot
 
 A discord bot that helps report on the weather
 
