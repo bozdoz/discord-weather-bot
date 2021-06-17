@@ -1,7 +1,10 @@
-version: "3.8"
+version: '3.8'
 
 services:
   main:
     command: yarn dev
+    container_name: dev-discord-weather-bot
+    environment:
+      DEV: 'true'
     volumes:
       - .:/app
